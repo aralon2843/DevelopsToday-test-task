@@ -23,7 +23,7 @@ const NewPost: React.FC = (): JSX.Element => {
       createNewPostRequest({
         title: titleValue,
         body: bodyValue,
-      })
+      }),
     );
     if (!error) {
       router.push('/');
@@ -43,16 +43,11 @@ const NewPost: React.FC = (): JSX.Element => {
               type="text"
               name="titleInput"
               value={titleValue}
-              onChange={e => setTitleValue(e.target.value)}
+              onChange={(e) => setTitleValue(e.target.value)}
             />
             <label htmlFor="bodyInput">Body</label>
-            <BodyInput
-              type="text"
-              name="bodyInput"
-              value={bodyValue}
-              onChange={e => setBodyValue(e.target.value)}
-            />
-            <SubmitButton>Create post</SubmitButton>
+            <BodyInput type="text" name="bodyInput" value={bodyValue} onChange={(e) => setBodyValue(e.target.value)} />
+            <SubmitButton disabled={titleValue === '' || bodyValue === ''}>Create post</SubmitButton>
           </NewPostForm>
         </>
       )}

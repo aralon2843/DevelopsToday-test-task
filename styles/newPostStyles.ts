@@ -25,6 +25,10 @@ export const SubmitButton = styled.button`
   text-transform: uppercase;
   font-weight: 500;
   cursor: pointer;
+  &:disabled {
+    opacity: 0.5;
+    transition: opacity 0.3 ease;
+  }
 `;
 
 export const NewPostForm = styled.form`
