@@ -1,4 +1,4 @@
-import { AnyAction, combineReducers, Reducer } from 'redux';
+import { AnyAction, combineReducers } from 'redux';
 import { HYDRATE } from 'next-redux-wrapper';
 import homeReducer from './homeReducer';
 import postReducer from './postReducer';
@@ -12,7 +12,7 @@ const rootReducer = combineReducers({
   newComment: newCommentReducer,
 });
 
-export const reducer = (state: any, action: any) => {
+export const reducer = (state: any, action: AnyAction): any => {
   if (action.type === HYDRATE) {
     const nextState = {
       ...state,

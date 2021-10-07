@@ -1,7 +1,7 @@
 import { IPost } from './post';
 
 export interface NewPostState {
-  newPost: IPost | {};
+  newPost: IPost;
   isLoaded: boolean;
   error: boolean | string;
 }

@@ -1,7 +1,12 @@
 import { NewPostAction, NewPostActionsTypes, NewPostState } from '../../types/newPost';
 
 const initialState: NewPostState = {
-  newPost: {},
+  newPost: {
+    id: 0,
+    title: '',
+    body: '',
+    comments: [],
+  },
   isLoaded: false,
   error: false,
 };
