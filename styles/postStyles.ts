@@ -69,6 +69,7 @@ export const NewCommentForm = styled.form`
   display: flex;
   align-items: center;
   margin-bottom: 30px;
+  position: relative;
 `;
 
 export const SubmitComment = styled.button`
@@ -79,4 +80,7 @@ export const SubmitComment = styled.button`
   height: 25px;
   cursor: pointer;
   padding: 10px;
+  &:disabled {
+    opacity: 0.5;
+  }
 `;

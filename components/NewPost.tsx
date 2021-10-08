@@ -30,6 +30,11 @@ const NewPost: React.FC = (): JSX.Element => {
     }
   };
 
+  const validateNewPost = (): boolean => {
+    if (titleValue.trim() !== '' && bodyValue.trim() !== '') return true;
+    return false;
+  };
+
   return (
     <MainContainer title={'New post'}>
       {error ? (
@@ -47,7 +52,7 @@ const NewPost: React.FC = (): JSX.Element => {
             />
             <label htmlFor="bodyInput">Body</label>
             <BodyInput type="text" name="bodyInput" value={bodyValue} onChange={(e) => setBodyValue(e.target.value)} />
-            <SubmitButton disabled={titleValue === '' || bodyValue === ''}>Create post</SubmitButton>
+            <SubmitButton disabled={!validateNewPost()}>Create post</SubmitButton>
           </NewPostForm>
         </>
       )}
